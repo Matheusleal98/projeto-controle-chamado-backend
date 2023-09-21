@@ -1,0 +1,15 @@
+spring:
+  data:
+    jdbc:
+      repositories:
+        enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/chamados
+    username: postgres
+    password: postgres
+  jpa:
+#    change-log: classpath:/db/changelog/0_CreateDatabase.yaml
+#    user: postgres
+#    password: postgres
+#    url: jdbc:postgresql://localhost:5432/chamados
