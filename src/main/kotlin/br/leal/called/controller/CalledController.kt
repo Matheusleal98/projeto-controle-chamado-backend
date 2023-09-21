@@ -18,6 +18,11 @@ class CalledController {
         return calledService.findAll()
     }
 
+    @GetMapping("/find/{id}")
+    fun findById(@PathVariable id: Long): Called? {
+        return calledService.findById(id)
+    }
+
     @DeleteMapping("/delete/{codigo}")
     fun delete(@PathVariable codigo: Long) {
         calledService.delete(codigo)
