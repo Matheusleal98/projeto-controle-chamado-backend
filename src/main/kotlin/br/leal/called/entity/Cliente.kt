@@ -4,7 +4,7 @@ import jakarta.persistence.*
 
 @Table(name = "tb_cliente")
 @Entity
-class Cliente (
+data class Cliente (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0,
     @Column(name = "nome")
