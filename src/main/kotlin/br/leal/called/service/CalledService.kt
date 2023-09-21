@@ -20,6 +20,7 @@ class CalledService {
             called.assunto = calledDTO.assunto
             called.status = calledDTO.status
             called.atendente = calledDTO.atendente
+            called.descricao = calledDTO.descricao
             called.dataHora = LocalDateTime.now().toString()
         return calledRepository.save(called)
     }
@@ -47,6 +48,7 @@ class CalledService {
                 existingCalled.assunto = dto.assunto
                 existingCalled.status = dto.status
                 existingCalled.atendente = dto.atendente
+                existingCalled.descricao = dto.descricao
                 calledRepository.save(existingCalled)
             }
             .orElseGet {
