@@ -1,4 +1,4 @@
-package br.leal.chamados.controller
+package br.leal.called.controller
 
 import br.leal.chamados.CalledDTO
 import br.leal.chamados.entity.Called
