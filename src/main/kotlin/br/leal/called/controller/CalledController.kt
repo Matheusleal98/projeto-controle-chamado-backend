@@ -1,8 +1,8 @@
 package br.leal.called.controller
 
-import br.leal.chamados.CalledDTO
-import br.leal.chamados.entity.Called
-import br.leal.chamados.service.CalledService
+import br.leal.called.CalledDTO
+import br.leal.called.entity.Called
+import br.leal.called.service.CalledService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

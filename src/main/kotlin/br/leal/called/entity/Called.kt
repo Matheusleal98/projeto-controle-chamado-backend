@@ -1,4 +1,4 @@
-package br.leal.chamados.entity
+package br.leal.called.entity
 
 import jakarta.persistence.*
 import lombok.Getter

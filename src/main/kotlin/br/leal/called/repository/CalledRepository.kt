@@ -1,6 +1,6 @@
-package br.leal.chamados.repository
+package br.leal.called.repository
 
-import br.leal.chamados.entity.Called
+import br.leal.called.entity.Called
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

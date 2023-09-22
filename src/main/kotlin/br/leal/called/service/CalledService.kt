@@ -1,8 +1,8 @@
-package br.leal.chamados.service
+package br.leal.called.service
 
-import br.leal.chamados.CalledDTO
-import br.leal.chamados.entity.Called
-import br.leal.chamados.repository.CalledRepository
+import br.leal.called.CalledDTO
+import br.leal.called.entity.Called
+import br.leal.called.repository.CalledRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service

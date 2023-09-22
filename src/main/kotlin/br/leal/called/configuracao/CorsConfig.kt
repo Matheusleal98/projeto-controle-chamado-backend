@@ -1,4 +1,4 @@
-package br.leal.chamados.configuracao
+package br.leal.called.configuracao
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

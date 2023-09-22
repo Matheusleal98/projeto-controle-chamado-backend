@@ -1,4 +1,4 @@
-package br.leal.chamados
+package br.leal.called
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
