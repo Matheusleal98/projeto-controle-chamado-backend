@@ -13,10 +13,15 @@ class ClientService {
     lateinit var clientRepository: ClientRepository
 
     fun createClient(dto: ClienteDTO): Cliente{
-        val client = Cliente()
-        client.nome = dto.nome
-        client.email = dto.email
-        client.cpf = dto.cpf
-        return clientRepository.save(client)
+        val cliente =  mapperTo(dto)
+        return clientRepository.save(cliente)
+    }
+
+    private fun mapperTo(dto: ClienteDTO): Cliente {
+        val cliente = Cliente()
+        cliente.nome = dto.nome
+        cliente.cpf = dto.cpf
+        cliente.email = dto.email
+        return cliente
     }
 }

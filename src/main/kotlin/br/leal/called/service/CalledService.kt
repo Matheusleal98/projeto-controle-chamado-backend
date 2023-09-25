@@ -45,7 +45,11 @@ class CalledService {
     fun updateCalled(dto: CalledDTO, id: Long): Called {
         return calledRepository.findById(id)
             .map { existingCalled ->
-                mapperTo(dto)
+                existingCalled.nomeCliente = dto.nomeCliente
+                existingCalled.status = dto.status
+                existingCalled.atendente = dto.atendente
+                existingCalled.assunto = dto.assunto
+                existingCalled.descricao= dto.descricao
                 calledRepository.save(existingCalled)
             }
             .orElseGet {
