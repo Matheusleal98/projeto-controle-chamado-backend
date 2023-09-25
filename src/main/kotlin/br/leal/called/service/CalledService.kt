@@ -14,46 +14,44 @@ class CalledService {
     @Autowired
     lateinit var calledRepository: CalledRepository
 
-    fun createCalled(calledDTO: CalledDTO): Called {
-        val called = Called()
-            called.nomeCliente = calledDTO.nomeCliente
-            called.assunto = calledDTO.assunto
-            called.status = calledDTO.status
-            called.atendente = calledDTO.atendente
-            called.descricao = calledDTO.descricao
-            called.dataHora = LocalDateTime.now().toString()
+    fun createCalled(dto: CalledDTO): Called {
+        val called = mapperTo(dto)
         return calledRepository.save(called)
-    }
-
-    fun findAll(): MutableList<Called> {
-        return calledRepository.findAll()
     }
 
     fun delete(id: Long) {
         calledRepository.deleteById(id)
     }
 
-    fun save(chamado: Called): Called {
-        return calledRepository.save(chamado)
+    fun findAll(): MutableList<Called> {
+        return calledRepository.findAll()
     }
 
     fun findById(id: Long?): Called? {
         return calledRepository.findByIdOrNull(id)
     }
 
+    fun mapperTo(dto: CalledDTO): Called {
+        val called = Called()
+        called.nomeCliente = dto.nomeCliente
+        called.assunto = dto.assunto
+        called.status = dto.status
+        called.atendente = dto.atendente
+        called.descricao = dto.descricao
+        called.dataHora = LocalDateTime.now().toString()
+        return called
+    }
+
     fun updateCalled(dto: CalledDTO, id: Long): Called {
         return calledRepository.findById(id)
             .map { existingCalled ->
-                existingCalled.nomeCliente = dto.nomeCliente
-                existingCalled.assunto = dto.assunto
-                existingCalled.status = dto.status
-                existingCalled.atendente = dto.atendente
-                existingCalled.descricao = dto.descricao
+                mapperTo(dto)
                 calledRepository.save(existingCalled)
             }
             .orElseGet {
-                val newCalled = createCalled(dto) // Crie um novo objeto Called com base no DTO
-                newCalled.id = id // Defina o ID do novo objeto como o ID fornecido
+                val newCalled = Called()
+                newCalled.id = id
+                createCalled(dto)
                 calledRepository.save(newCalled)
             }
     }
