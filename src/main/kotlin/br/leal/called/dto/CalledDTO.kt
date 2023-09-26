@@ -1,4 +1,4 @@
-package br.leal.called
+package br.leal.called.dto
 
 data class CalledDTO(val nomeCliente: String,
                      val assunto: String,

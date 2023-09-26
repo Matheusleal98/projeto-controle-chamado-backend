@@ -1,6 +1,6 @@
 package br.leal.called.controller
 
-import br.leal.called.ClienteDTO
+import br.leal.called.dto.ClienteDTO
 import br.leal.called.entity.Cliente
 import br.leal.called.service.ClientService
 import org.springframework.beans.factory.annotation.Autowired
