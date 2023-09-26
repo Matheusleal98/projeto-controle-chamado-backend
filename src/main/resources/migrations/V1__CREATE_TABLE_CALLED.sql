@@ -1,8 +1,9 @@
 CREATE TABLE tb_chamado (
-                            id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                            nomeCliente VARCHAR(255) NOT NULL,
+                            id BIGINT PRIMARY KEY,
+                            cliente_id INTEGER NOT NULL,
                             assunto VARCHAR(255) NOT NULL,
                             status VARCHAR(255) NOT NULL,
                             atendente VARCHAR(255) NOT NULL,
-                            dataHora VARCHAR(255) NOT NULL
+                            dataHora VARCHAR(255) NOT NULL,
+                            FOREIGN KEY (cliente_id) REFERENCES tb_cliente(id)
 );
