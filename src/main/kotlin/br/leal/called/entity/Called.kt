@@ -11,7 +11,7 @@ import lombok.Setter
 data class Called(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0,
-    @Column(name = "nome_cliente")
+    @Column(name = "nomecliente")
     var nomeCliente: String? = null,
     @Column(name = "assunto")
     var assunto: String? = null,
